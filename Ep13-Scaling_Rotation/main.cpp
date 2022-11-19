@@ -23,16 +23,12 @@ float yOffset = 0.0f;
 const float yIncrement = 0.01f;
 float yOffsetMaximum = 0.6f;
 
-
 bool scaleDirection = false;
 float currentScale = 0.4f;
 float maxScale = 0.8f;
 float minScale = 0.4f;
 
-
 float currentAngle = 0.0f;
-
-
 
 int main()
 {
@@ -103,13 +99,9 @@ int main()
 
 		glm::mat4 model(1.0f); // Identity Matrix
 	
-		
 		model = glm::rotate(model, currentAngle * 3.14f / 180.0f, glm::vec3(0.0f, 0.0f, 1.0f));
 		model = glm::translate(model, glm::vec3(0.0f, yOffset, 0.0f));
 		model = glm::scale(model, glm::vec3(currentScale, currentScale, 1.0f));
-		
-		
-
 		
 		glUniformMatrix4fv(pShaderProg->uniformModel, 1, false, glm::value_ptr(model));
 
